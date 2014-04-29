@@ -1,0 +1,87 @@
+<html ng-app='SimpleSampleApp'>
+<head>
+	<title>Your Shopping Cart</title>
+	<style type="text/css">
+	    .menu-disabled-true
+	    {
+	        color:gray;
+	    }
+	    .menu-disabled-false
+	    {
+	        color:blue;
+	    }
+	    .error 
+	    {
+			background-color: red;
+		}
+		.warning 
+		{
+			background-color: yellow;
+		}
+		.selected 
+		{
+			background-color: lightgreen;
+		}
+    </style>
+    <script src='../../scripts/dtkSDK/angular/angular.js'></script>
+	<script src="../../scripts/app/angular/SimpleSample.js"></script>
+</head>
+<body>
+
+<h1>Shopping Cart</h1>
+<div ng-controller='CartController'>
+	<div ng-repeat='item in items'>
+		<span>{{item.title}}</span>
+		<input ng-model='item.quantity'>
+		<span>{{item.price | currency}}</span>
+		<span>{{item.price * item.quantity | currency}}</span>
+		<button ng-click="remove($index)">Remove</button>
+	</div>
+	<div>Total: {{bill.total | currency}}</div>
+	<div>Discount: {{bill.discount | currency}}</div>
+	<div>Subtotal: {{bill.subtotal | currency}}</div>
+</div>
+
+<h1>Funding Estimated</h1>
+<form ng-submit="requestFunding()" ng-controller="StartUpController">
+	Starting: <input ng-change="computeNeeded()"
+	ng-model="funding.startingEstimate">
+	Recommendation: {{funding.needed}}
+	<button>Fund my startup!</button>
+	<button ng-click="reset()">Reset</button>
+</form>
+
+<h1>Student List</h1>
+<div ng-controller='StudentListController'>
+	<button ng-click='toggleMenu()'>Toggle Menu</button>
+	<button ng-click='disableMenu()'>{{Disable.text}} Menu</button>
+	<ul ng-show='menuState.show'>
+		<li ng-repeat='student in students' class='menu-disabled-{{isDisabled}}'>
+			{{student.name}}
+		</li>
+	</ul>
+	<button ng-click="insertTom()">Insert</button>
+</div>
+
+<h1>CSS Changed</h1>
+<div ng-controller='CssController'>
+	<div ng-class='{error: isError, warning: isWarning}'>{{messageText}}</div>
+	<button ng-click='showError()'>Simulate Error</button>
+	<button ng-click='showWarning()'>Simulate Warning</button>
+</div>
+
+<h1>Restaurant Table</h1>
+<table ng-controller='RestaurantTableController'>
+	<tr ng-repeat='restaurant in directory' ng-click='selectRestaurant($index)' ng-class='{selected: $index==selectedRow}'>
+	<td>{{restaurant.name}}</td>
+	<td>{{restaurant.cuisine}}</td>
+	</tr>
+</table>
+
+<h1>Custom Filter</h1>
+<div ng-controller="FilterController">
+	<div>{{pageHeading | titleCase}}</div>
+</div>
+
+</body>
+</html>
