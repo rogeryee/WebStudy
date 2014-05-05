@@ -1,4 +1,4 @@
-/// <reference path="lib/angularjs/angular.d.ts"/>
+/// <reference path="../lib/angularjs/angular.d.ts"/>
 var SimpleSampleApp;
 (function (SimpleSampleApp) {
     var CartController = (function () {

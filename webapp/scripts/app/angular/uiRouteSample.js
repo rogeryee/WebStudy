@@ -1,5 +1,5 @@
-/// <reference path="lib/angularjs/angular.d.ts"/>
-/// <reference path="lib/angularjs/angular.d.ts" />
+/// <reference path="../lib/angularjs/angular.d.ts"/>
+/// <reference path="../lib/angularjs/angular.d.ts" />
 var uiRouterApp;
 (function (uiRouterApp) {
     var RouteController = (function () {

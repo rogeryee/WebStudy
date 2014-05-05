@@ -1,4 +1,4 @@
-/// <reference path="lib/angularjs/angular.d.ts"/>
+/// <reference path="../lib/angularjs/angular.d.ts"/>
 var HelloApp;
 (function (HelloApp) {
     var HelloController = (function () {

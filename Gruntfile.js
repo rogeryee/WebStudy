@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         },
         dist: {            
             src: ['webapp/scripts/app/angular/**/*.js'],//用于连接的文件
-            dest: 'webapp/scripts/app/app.min.js'//返回的JS文件位置
+            dest: 'webapp/scripts/app/app.js'//返回的JS文件位置
         }
     },
     uglify: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'webapp/scripts/app/app.min.js',
+        src: 'webapp/scripts/app/app.js',
         dest: 'webapp/scripts/app/app.min.js'
       }
     }
