@@ -26,3 +26,6 @@
 	
 	#### uiRoute\RouteSample.html ####
 	介绍：本例介绍了采用AngularJS的ui-Router插件的应用。
+	
+	#### SimpleXHR.html ####
+	介绍：本例介绍了AngularJS的$http的使用。

@@ -1,0 +1,14 @@
+<html ng-app="myApp">
+<head>
+	<script src='../../scripts/dtkSDK/angular/angular.js'></script>
+	<script src='../../scripts/dtkSDK/angular/angular-resource.js'></script>
+	<script src="../../scripts/app/angular/ResourceSample.js"></script>
+</head>
+<body>
+	<div ng-controller='ResourceController'>
+		<div ng-repeat='person in persons'>
+			<p>Name : {{person.name}}, Age: {{person.age}}</p>
+		</div>
+	</div>
+</body>
+</html>
