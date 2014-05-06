@@ -3,30 +3,39 @@
 
 module ResourceSampleApp 
 {
+	export class PersonResource
+	{
+		private resource:any;
+		private getPersonAction : ng.resource.IActionDescriptor = {
+            method: 'GET',
+            isArray: true
+        };
+		
+		constructor($resource : ng.resource.IResourceService)
+		{
+			this.resource = $resource( 'person.json',
+							{},
+							{getPerson: this.getPersonAction});
+		}
+	
+		public getPersonList()
+		{
+			return this.resource.getPerson();
+		}
+	}
+	
 	export class ResourceController 
 	{
-	    constructor(private $scope: ng.IScope, private webApi:WebApi) 
+		constructor(private $scope: ng.IScope, personResource:PersonResource) 
 		{
-	        this.$scope.persons = webApi.getPersonInfo("person");
+	        this.$scope.persons = personResource.getPersonList();
 	    }
 	}
 	
-	export class WebApi
-	{
-		constructor(private $resource:ng.resource)
-		{
-			
-		}
-		
-		public getPersonInfo(filename:string)
-		{
-			return this.$resource( 'person.json',{},{ getPerson: {method:'GET', params:{}, isArray:true}}).getPerson();
-		}
-	}
 	
 	// Define the Angular module for our application.
 	angular.module("myApp", ['ngResource'])
-		.service("WebApi", ResourceSampleApp.WebApi)
-		.controller("ResourceController", ["$scope","WebApi", ResourceSampleApp.ResourceController]);
+		.service("PersonResource", ResourceSampleApp.PersonResource)
+		.controller("ResourceController", ["$scope","PersonResource", ResourceSampleApp.ResourceController]);
 	
 }

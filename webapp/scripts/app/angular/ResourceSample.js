@@ -2,28 +2,31 @@
 /// <reference path="../lib/angularjs/angular-resource.d.ts"/>
 var ResourceSampleApp;
 (function (ResourceSampleApp) {
+    var PersonResource = (function () {
+        function PersonResource($resource) {
+            this.getPersonAction = {
+                method: 'GET',
+                isArray: true
+            };
+            this.resource = $resource('person.json', {}, { getPerson: this.getPersonAction });
+        }
+        PersonResource.prototype.getPersonList = function () {
+            return this.resource.getPerson();
+        };
+        return PersonResource;
+    })();
+    ResourceSampleApp.PersonResource = PersonResource;
+
     var ResourceController = (function () {
-        function ResourceController($scope, webApi) {
+        function ResourceController($scope, personResource) {
             this.$scope = $scope;
-            this.webApi = webApi;
-            this.$scope.persons = webApi.getPersonInfo("person");
+            this.$scope.persons = personResource.getPersonList();
         }
         return ResourceController;
     })();
     ResourceSampleApp.ResourceController = ResourceController;
 
-    var WebApi = (function () {
-        function WebApi($resource) {
-            this.$resource = $resource;
-        }
-        WebApi.prototype.getPersonInfo = function (filename) {
-            return this.$resource('person.json', {}, { getPerson: { method: 'GET', params: {}, isArray: true } }).getPerson();
-        };
-        return WebApi;
-    })();
-    ResourceSampleApp.WebApi = WebApi;
-
     // Define the Angular module for our application.
-    angular.module("myApp", ['ngResource']).service("WebApi", ResourceSampleApp.WebApi).controller("ResourceController", ["$scope", "WebApi", ResourceSampleApp.ResourceController]);
+    angular.module("myApp", ['ngResource']).service("PersonResource", ResourceSampleApp.PersonResource).controller("ResourceController", ["$scope", "PersonResource", ResourceSampleApp.ResourceController]);
 })(ResourceSampleApp || (ResourceSampleApp = {}));
 //# sourceMappingURL=ResourceSample.js.map
