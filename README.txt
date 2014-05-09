@@ -36,5 +36,5 @@
 ##################
 
 	#### HelloWorldResource.java ####
-	介绍：本例为入门的Hello Wolrd例子，展现了如何采用Jersey2.8+Tomcat8集成搭建RESTFul的架构
+	介绍：本例为入门的Hello Wolrd例子，展现了如何采用Jersey2.8+Tomcat8集成搭建RESTFul的架构，可以通过http://localhost:8080/WebStudy/services/helloworld访问该服务。
 
