@@ -29,3 +29,12 @@
 	
 	#### SimpleXHR.html ####
 	介绍：本例介绍了AngularJS的$http的使用。
+
+	
+##################
+####  Jersey   ### 
+##################
+
+	#### HelloWorldResource.java ####
+	介绍：本例为入门的Hello Wolrd例子，展现了如何采用Jersey2.8+Tomcat8集成搭建RESTFul的架构
+
