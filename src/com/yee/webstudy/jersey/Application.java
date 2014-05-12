@@ -1,5 +1,7 @@
 package com.yee.webstudy.jersey;
 
+import javax.json.stream.JsonGenerator;
+
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.server.ResourceConfig;
 
@@ -16,6 +18,7 @@ public class Application extends ResourceConfig
 
 		// JSON Support
 		register(JacksonJsonProvider.class);
+		property(JsonGenerator.PRETTY_PRINTING, true);
 
 		// Logging
 		register(LoggingFilter.class);

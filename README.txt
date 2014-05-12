@@ -44,6 +44,8 @@
 	#### JsonSupportResource.java ####
 	介绍：本例展示了在Jersey服务中使用JSON对象，可以通过以下的URL来访问相应的服务：
 	基于Jaxb的JSON支持 - http://localhost:8080/WebStudy/services/json/jaxb
+	基于Jackson的JSON支持 - http://localhost:8080/WebStudy/services/json/jackson
+	基于JSON Processing的JSON支持 - http://localhost:8080/WebStudy/services/json/jsonp
 	
 	
 	
