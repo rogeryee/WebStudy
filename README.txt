@@ -40,4 +40,16 @@
 	http://localhost:8080/WebStudy/services/helloworld
 	http://localhost:8080/WebStudy/services/helloworld/user/Roger
 	http://localhost:8080/WebStudy/services/helloworld/user?name=Roger
+	
+	#### JsonSupportResource.java ####
+	介绍：本例展示了在Jersey服务中使用JSON对象，可以通过以下的URL来访问相应的服务：
+	基于Jaxb的JSON支持 - http://localhost:8080/WebStudy/services/json/jaxb
+	
+	
+	
+	
+	
+	
+	
+	
 

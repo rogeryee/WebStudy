@@ -1,4 +1,4 @@
-package com.yeeapp.webstudy.jersey;
+package com.yee.webstudy.jersey.resources;
 
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
