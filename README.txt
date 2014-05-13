@@ -50,7 +50,9 @@
 	#### RequestFilter.java ####
 	介绍：本例展示了在Jersey服务中使用Filter，RequestFilter类可以捕获在request发送到server之前以及response返回给client之前。通过Filter可以进行用户验证、日志等操作。
 	
-	
+	#### Logged.java ####
+	介绍：本例展示了在Jersey服务中如何自定义的将Filter或Interceptor与具体的类或方法绑定。本例中创建了一个自定义的注释Logged，并对其添加了Namebinding的注释，这样可以给对应的Resource类和Filter类添加@Logged注释，
+	这样只有添加了@Logged注释的方法才会触发Filter
 	
 	
 	

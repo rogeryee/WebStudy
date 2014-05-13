@@ -8,6 +8,9 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 
+import com.yee.webstudy.jersey.annotation.Logged;
+
+@Logged
 public class RequestFilter implements ContainerResponseFilter,
 		ContainerRequestFilter
 {

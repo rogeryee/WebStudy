@@ -1,12 +1,15 @@
 package com.yee.webstudy.jersey.resources;
 
-import javax.ws.rs.Path;
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import com.yee.webstudy.jersey.annotation.Logged;
+
+@Logged
 @Path("/helloworld")
 public class HelloWorldResource
 {
