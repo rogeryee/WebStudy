@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import org.glassfish.jersey.server.JSONP;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Path("/json")
@@ -69,6 +71,15 @@ public class JsonSupportResource
 
 		return jsonObject;
 	}
+
+	@GET
+	@Path("/jsonpadding")
+	@JSONP(callback = "eval", queryParam = "jsonpCallback")
+	@Produces({ "application/json", "application/javascript" })
+	public JsonpBean getSimpleJSONP()
+	{
+		return new JsonpBean("jsonp");
+	}
 }
 
 @XmlRootElement
@@ -103,5 +114,30 @@ class JacksonBean
 	{
 		this.name = name;
 		this.address = address;
+	}
+}
+
+@XmlRootElement
+class JsonpBean
+{
+	private String value;
+
+	public JsonpBean()
+	{
+	}
+
+	public JsonpBean(final String value)
+	{
+		this.value = value;
+	}
+
+	public String getValue()
+	{
+		return value;
+	}
+
+	public void setValue(final String value)
+	{
+		this.value = value;
 	}
 }

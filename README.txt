@@ -35,7 +35,7 @@
 ####  Jersey   ### 
 ##################
 
-	#### HelloWorldResource.java #### http://my.oschina.net/mlongbo/blog/152548
+	#### HelloWorldResource.java ####
 	介绍：本例为入门的Hello Wolrd例子，展现了如何采用Jersey2.8+Tomcat8集成搭建RESTFul的架构，可以通过以下的URL来访问相应的服务：
 	http://localhost:8080/WebStudy/services/helloworld
 	http://localhost:8080/WebStudy/services/helloworld/user/Roger
@@ -47,7 +47,8 @@
 	基于Jackson的JSON支持 - http://localhost:8080/WebStudy/services/json/jackson
 	基于JSON Processing的JSON支持 - http://localhost:8080/WebStudy/services/json/jsonp
 	
-	
+	#### RequestFilter.java ####
+	介绍：本例展示了在Jersey服务中使用Filter，RequestFilter类可以捕获在request发送到server之前以及response返回给client之前。通过Filter可以进行用户验证、日志等操作。
 	
 	
 	

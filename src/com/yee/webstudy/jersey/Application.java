@@ -2,10 +2,10 @@ package com.yee.webstudy.jersey;
 
 import javax.json.stream.JsonGenerator;
 
-import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.yee.webstudy.jersey.filter.RequestFilter;
 
 public class Application extends ResourceConfig
 {
@@ -17,10 +17,10 @@ public class Application extends ResourceConfig
 		// register(JsonSupportResource.class);
 
 		// JSON Support
-		register(JacksonJsonProvider.class);
-		property(JsonGenerator.PRETTY_PRINTING, true);
+		register(JacksonJsonProvider.class);// For Jackson
+		property(JsonGenerator.PRETTY_PRINTING, true);// For JSON-Processing
 
 		// Logging
-		register(LoggingFilter.class);
+		register(RequestFilter.class);
 	}
 }
