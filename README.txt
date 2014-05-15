@@ -68,7 +68,13 @@
 	注意：确保classpath下只有 logback的jar，而无SLF4J-Simple的jar包，否则SLF4J会自动加载其中任一个。
 
 
+##################
+####  Shiro    ### 
+##################
 
+	#### loginAndLogout\LoginAndLogoutSample ####
+	介绍：本例展示了用Shiro作为框架构建的登录/登出的验证。
+	
 
 
 

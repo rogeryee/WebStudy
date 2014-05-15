@@ -11,7 +11,6 @@ public class HelloWorld
 	public static void main(String[] args)
 	{
 		Logger logger = LoggerFactory.getLogger("com.yee.webstudy.slf4j.HelloWorld");
-	    logger.debug("Hello World");
+	    logger.debug("Hello World!123");
 	}
-
 }
