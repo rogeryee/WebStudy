@@ -1,5 +1,6 @@
 ####### 项目介绍 #######
 本工程包含了学习WEB Application的多个例子，并集成了Typescript作为开发的环境。
+在使用Eclipse时，采用Dynamic Web Application的模板，output目录设置为webapp/WEB-INF/classes目录，否则可能会发生cannot found or load main class
 
 
 #################
@@ -74,8 +75,10 @@
 
 	#### loginAndLogout\LoginAndLogoutSample ####
 	介绍：本例展示了用Shiro作为框架构建的登录/登出的验证。
+	注意：使用ini配置文件时，如果用"classpath:xxxx.ini"的方式，则需要将该xxxx.ini文件放在根目录下，否则要使用绝对路径获取文件
 	
-
+	1. testLoginFromIniFile通过读取ini文件中的用户凭证，来验证用户信息
+	2. testLoginFromCustomMutilpleRealm方法读取了ini的配置信息，但是该ini文件并不存放用户信息，而是指向了MyRealm1和MyRealm2这两个自定义的Realm的实现。
 
 
 
