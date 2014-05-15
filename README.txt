@@ -55,6 +55,22 @@
 	这样只有添加了@Logged注释的方法才会触发Filter
 	
 	
+##################
+####  SLF4J    ### 
+##################
+
+	#### HelloWorld.java ####
+	介绍：本例采用了SLF4J的框架+SLF4J-Simple实现了简单的日志输出.
+	注意：确保classpath下只有 SLF4J-Simple的jar，而无logback的jar包，否则SLF4J会自动加载其中任一个。
 	
-	
+	#### LogbackHelloWorld.java ####
+	介绍：本例采用了SLF4J的框架+logback实现了简单的日志输出	
+	注意：确保classpath下只有 logback的jar，而无SLF4J-Simple的jar包，否则SLF4J会自动加载其中任一个。
+
+
+
+
+
+
+
 
