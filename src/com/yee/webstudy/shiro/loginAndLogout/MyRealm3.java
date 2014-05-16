@@ -11,13 +11,13 @@ import org.apache.shiro.realm.Realm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MyRealm1 implements Realm
+public class MyRealm3 implements Realm
 {
-	private Logger logger = LoggerFactory.getLogger(MyRealm1.class);
+	private Logger logger = LoggerFactory.getLogger(MyRealm3.class);
 	
 	public String getName()
 	{
-		return "MyRealm1";
+		return "MyRealm3";
 	}
 
 	public boolean supports(AuthenticationToken token)
@@ -31,7 +31,7 @@ public class MyRealm1 implements Realm
 		
 		String username = (String) token.getPrincipal(); // 得到用户名
 		String password = new String((char[]) token.getCredentials()); // 得到密码
-		
+
 		if (!"Roger".equals(username))
 		{
 			throw new UnknownAccountException(); // 如果用户名错误
@@ -40,8 +40,8 @@ public class MyRealm1 implements Realm
 		{
 			throw new IncorrectCredentialsException(); // 如果密码错误
 		}
-		
+
 		// 如果身份认证验证成功，返回一个AuthenticationInfo实现；
-		return new SimpleAuthenticationInfo(username, password, getName());
+		return new SimpleAuthenticationInfo(username + "@hotmil.com", password, getName());
 	}
 }

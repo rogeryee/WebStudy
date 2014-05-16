@@ -79,7 +79,13 @@
 	
 	1. testLoginFromIniFile通过读取ini文件中的用户凭证，来验证用户信息
 	2. testLoginFromCustomMutilpleRealm方法读取了ini的配置信息，但是该ini文件并不存放用户信息，而是指向了MyRealm1和MyRealm2这两个自定义的Realm的实现。
+	3. testLoginFromJDBCRealm方法展示了如何采用JDBC的方式获取用户验证：
+	   1) 需要在ini文件中配置jdbc数据源，并配置org.apache.shiro.realm.jdbc.JdbcRealm为Realm的实现类
+	   2) JdbcRealm中默认查询语句为"select password from users where username = ?"，当然用户也可以继承JdbcRealm并override相应的方法，达到定制化查询语句的目的。
 
-
+	4. testLoginFromCustomMutilpleRealmWithStrategy继承了验证的策略，在allSuccessful.ini文件中配置验证策略，本例用的是AllSuccessfulStrategy，即所有Realm验证成功才算成功，且返回所有Realm身份验证成功的
+认证信息，Shiro还提供如下策略：
+		FirstSuccessfulStrategy：只要有一个Realm验证成功即可，只返回第一个Realm身份验证成功的认证信息，其他的忽略；
+		AtLeastOneSuccessfulStrategy：只要有一个Realm验证成功即可，和FirstSuccessfulStrategy不同，返回所有Realm身份验证成功的认证信息；
 
 
