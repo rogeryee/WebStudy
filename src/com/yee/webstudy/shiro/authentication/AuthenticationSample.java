@@ -1,4 +1,4 @@
-package com.yee.webstudy.shiro.loginAndLogout;
+package com.yee.webstudy.shiro.authentication;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -18,16 +18,16 @@ import com.yee.webstudy.shiro.Constants;
  * 
  * @author Roger.Yee
  */
-public class LoginAndLogoutSample
+public class AuthenticationSample
 {
-	private Logger logger = LoggerFactory.getLogger(LoginAndLogoutSample.class);
+	private Logger logger = LoggerFactory.getLogger(AuthenticationSample.class);
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
-		LoginAndLogoutSample sample = new LoginAndLogoutSample();
+		AuthenticationSample sample = new AuthenticationSample();
 
 		// sample.testLoginFromIniFile("Phoebe", "234");
 		//
@@ -76,7 +76,8 @@ public class LoginAndLogoutSample
 	}
 
 	/**
-	 * 
+	 * Shiro处理用户验证的流程如下：
+	 * 1、获取SecurityManager工厂，此处使用Ini配置文件初始化SecurityManager。ini文件中可以配置用户[user]
 	 * @param username
 	 * @param password
 	 */
