@@ -25,9 +25,11 @@ public class AuthorizationSample
 	{
 		AuthorizationSample sample = new AuthorizationSample();
 
-//		sample.testRoles();
-		
-		sample.testPermissions();
+		// sample.testRoles();
+
+		// sample.testPermissions();
+
+		sample.testCustomPermission();
 	}
 
 	public void testRoles()
@@ -64,10 +66,28 @@ public class AuthorizationSample
 		 */
 		// Return true
 		logger.debug("Roger has permission - 'user:create'  = " + user.isPermitted("user:create"));
-		// Return true
-		logger.debug("Roger has All permission ('user:create' and 'user:udpate')  = " + user.isPermittedAll("user:create", "user:update"));
+		// Return true (equals = user.isPermittedAll("user:create,update"))
+		logger.debug("Roger has All permission ('user:create' and 'user:udpate')  = "
+				+ user.isPermittedAll("user:create", "user:update"));
 		// Return false
-		logger.debug("Roger has All permission ('user:create' and 'system:user:create')  = " + user.isPermittedAll("user:create", "system:user:create"));
+		logger.debug("Roger has All permission ('user:create' and 'system:user:create')  = "
+				+ user.isPermittedAll("user:create", "system:user:create"));
+
+		user.logout();
+	}
+
+	public void testCustomPermission()
+	{
+		logger.debug("### testCustomPermission ###");
+
+		this.login("Roger", "123", "authorizer.ini");
+
+		Subject user = SecurityUtils.getSubject();
+
+		logger.debug("Roger has permission - 'user1:create'  = " + user.isPermitted("user1:create"));
+		logger.debug("Roger has permission - 'user1:update'  = " + user.isPermitted("user1:update"));
+		logger.debug("Roger has permission - '+user1+10'  = " + user.isPermitted("+user1+10"));
+		logger.debug("Roger has permission - 'menu:view'  = " + user.isPermitted("menu:view"));// 通过MyRolePermissionResolver解析得到的权限
 
 		user.logout();
 	}
