@@ -73,7 +73,7 @@
 ####  Shiro    ### 
 ##################
 
-	#### loginAndLogout\LoginAndLogoutSample ####
+	#### authentication\AuthenticationSample ####
 	介绍：本例展示了用Shiro作为框架构建的登录/登出的验证。
 	注意：使用ini配置文件时，如果用"classpath:xxxx.ini"的方式，则需要将该xxxx.ini文件放在根目录下，否则要使用绝对路径获取文件
 	
@@ -88,4 +88,22 @@
 		FirstSuccessfulStrategy：只要有一个Realm验证成功即可，只返回第一个Realm身份验证成功的认证信息，其他的忽略；
 		AtLeastOneSuccessfulStrategy：只要有一个Realm验证成功即可，和FirstSuccessfulStrategy不同，返回所有Realm身份验证成功的认证信息；
 
+	#### authorization\AuthorizationSample ####
+	介绍：本例展示了用Shiro作为框架构建的用户角色权限的验证。
+	
+	1. testRoles通过读取ini文件中的用户角色信息，来验证用户是否拥有角色
+	2. testPermissions通过读取ini文件中的用户角色权限信息，来验证用户是否拥有权限
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 

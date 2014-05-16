@@ -96,7 +96,7 @@ public class AuthenticationSample
 		// 1、获取SecurityManager工厂，此处使用Ini配置文件初始化SecurityManager
 		// 如果要使用例如"classpath:loginAndLogout.ini"的方式获取文件，则要将该文件放在classes的根目录上。
 		Factory<SecurityManager> factory = new IniSecurityManagerFactory(Constants.INI_PATH
-				+ "/com/yee/webstudy/shiro/loginAndLogout/" + config);
+				+ "/com/yee/webstudy/shiro/authentication/" + config);
 
 		// 2、得到SecurityManager实例 并绑定给SecurityUtils
 		SecurityUtils.setSecurityManager(factory.getInstance());
