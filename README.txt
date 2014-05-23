@@ -36,6 +36,13 @@
 	#### SimpleXHR.html ####
 	介绍：本例介绍了AngularJS的$http的使用。
 
+#################
+### Javascript ### 
+#################
+
+	#### variable_test.html ####
+	介绍：本例列举了javascript的变量使用的测试例子
+	
 	
 ##################
 ####  Jersey   ### 

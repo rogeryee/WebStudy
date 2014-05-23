@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Javascript Testing</title>
+<script>
+	
+	// This page shows the usage of the variable of Javascript.
+	
+	// Case 1: Argument passing with primitive value
+	function addCount(num)
+	{
+		num = num + 10;
+		return num;
+	}
+	
+	var count = 20;
+	var result = addCount(count);
+	alert(count); // 20 - no change
+	
+	// Case 2: Argument passing with object
+	function changeName(person)
+	{
+		person.name = "Hi " + person.name;
+	}
+	
+	var obj = new Object();
+	obj.name = "Roger";
+	changeName(obj);
+	alert(obj.name); // 'Hi Roger' - changed.
+	
+	// Case 3: Argument passing with object
+	function changeName1(person)
+	{
+		person.name = "Hi " + person.name;
+		
+		// create a new object, but it's a local variable
+		person = new Object();
+		person.name = "Welcome!"; 
+	}
+	
+	var person = new Object();
+	person.name = "Roger";
+	changeName1(obj);
+	alert(obj.name); // 'Hi Roger' - but not changed to 'Welcome'
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
