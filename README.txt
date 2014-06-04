@@ -43,6 +43,9 @@
 	#### variable_test.html ####
 	介绍：本例列举了javascript的变量使用的测试例子
 	
+	#### this_test.html ####
+	介绍：本例列举了javascript中"this"关键字使用的例子
+	
 	
 ##################
 ####  Jersey   ### 

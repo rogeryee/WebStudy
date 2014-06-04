@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Javascript Testing</title>
+<script>
+	
+	// This page shows the usage of 'protoytpe' of Javascript.
+	
+	function Person(name)
+	{
+		this.name = name;
+		this.jump = function(){
+			alert('I can jump!');
+		}
+	}
+	
+	Person.prototype.run = function(){
+		alert("I can run");
+	}
+	
+	Person.eat = function(){
+		alert("I can eat");
+	}
+	
+	Person.prototype.share = [];
+	
+	var p = new Person();
+	p.jump(); // instance method, (typeof Person.jump) == undefined
+	p.run(); // instance method, (typeof Person.run) == undefined
+	Person.eat(); // static method, (typeof p.eat) == undefined
+	
+	var person1 = new Person("Roger");
+	var person2 = new Person("Phoebe");
+	person1.share.push(1);
+	person2.share.push(2);
+	
+	alert(person1.name);// 'Roger'
+	alert(person2.name);// 'Phoebe'
+	alert(person1.share);// '1,2', this property is shared by the two instances.
+	
+	alert(person1.hasOwnProperty('name'));// 'True'
+	alert(person1.hasOwnProperty('share'));// 'False'
+	
+	alert(person1.hasOwnProperty('jump'));// 'True'
+	alert(person1.hasOwnProperty('eat'));// 'False'
+	alert(person1.hasOwnProperty('run'));// 'False'
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

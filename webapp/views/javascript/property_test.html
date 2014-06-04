@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Javascript Testing</title>
+<script>
+	
+	// This page shows the usage of 'protoytpe' of Javascript.
+	var person = {
+		id:"123",
+		_nickname:"Yee",	
+	}
+	
+	// Data properties
+	Object.defineProperty(person, "name", {
+		configurable:false,
+		writable:false,
+		value:"Roger"
+	});
+		
+	console.log(person.name); // 'Roger'
+	person.name = "Phoebe";
+	delete person.name; // Doesn' work, the property is not configurable.
+	console.log(person.name); // 'Roger', the property is not writable.
+	
+	// Accessor properties
+	Object.defineProperty(person, "nickname", {
+		configurable:false,
+		get: function(){
+			console.log("Get nickname");
+			return "Nick name is " + this._nickname;
+		},
+		set: function(newNickName){
+			console.log("Set nickname");
+			this._nickname = newNickName;
+		}
+	});
+	
+	console.log(person.nickname);// 'Nick name is Yee', the 'get' method is called.
+	person.nickname = 'Phoebeyee';// The 'set' method is called.
+	console.log(person.nickname);// 'Nick name is Phoebeyee', the 'get' method is called.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
