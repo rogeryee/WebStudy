@@ -125,12 +125,18 @@
 	4. testHash展现如何使用散列算法(sha1,sha256,sha384)进行加解密的过程。
 	
 	
+#####################
+####  Concurrency ### 
+#####################
+
+	#### ThreadInterruptTest.java ####	
+	展示了如何使用Thread.interrupt()方法以及子线程如何使用Thread.isInterrupted()方法来判断当前线程的状态
 	
+	#### ProducerConsumerTest.java ####	
+	展示了采用wait和notifyAll的方法来实现多线程中的消费者与生产者模式
 	
-	
-	
-	
-	
+	#### ProducerConsumerTest2.java ####	
+	展示了采用BlockedQueue来实现多线程中的消费者与生产者模式
 	
 	
 
