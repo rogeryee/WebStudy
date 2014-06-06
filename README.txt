@@ -136,7 +136,8 @@
 	展示了采用wait和notifyAll的方法来实现多线程中的消费者与生产者模式
 	
 	#### ProducerConsumerTest2.java ####	
-	展示了采用BlockedQueue来实现多线程中的消费者与生产者模式
+	展示了采用BlockingQueue来实现多线程中的消费者与生产者模式
 	
-	
+	#### WaitNotifyTest.java ####	
+	展示了wait和notify的使用，如果两个线程对于不同对象采用wait和notify，那么他们之间是不会产生影响的。
 
