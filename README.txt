@@ -141,3 +141,15 @@
 	#### WaitNotifyTest.java ####	
 	展示了wait和notify的使用，如果两个线程对于不同对象采用wait和notify，那么他们之间是不会产生影响的。
 
+	#### ReentrantLockTest.java ####	
+	展示了如何使用ReentrantLock来替代synchronized关键字的例子
+
+	#### ReentrantReadWriteLockTest.java ####	
+	展示了如何使用ReentrantReadWriteLockTest来分别获取读锁与写锁并保证线程互斥的操作。
+
+
+
+
+
+
+
