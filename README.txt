@@ -147,7 +147,8 @@
 	#### ReentrantReadWriteLockTest.java ####	
 	展示了如何使用ReentrantReadWriteLockTest来分别获取读锁与写锁并保证线程互斥的操作。
 
-
+	#### ConditionTest.java ####	
+	展示了如何使用Condition来完成线程之间的通讯。
 
 
 
