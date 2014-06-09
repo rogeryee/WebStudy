@@ -1,6 +1,7 @@
 ####### 项目介绍 #######
 本工程包含了学习WEB Application的多个例子，并集成了Typescript作为开发的环境。
 在使用Eclipse时，采用Dynamic Web Application的模板，output目录设置为webapp/WEB-INF/classes目录，否则可能会发生cannot found or load main class
+本工程的JAVA开发环境为JDK1.7
 
 
 #################
@@ -137,6 +138,9 @@
 	
 	#### ProducerConsumerTest2.java ####	
 	展示了采用BlockingQueue来实现多线程中的消费者与生产者模式
+	
+	#### ProducerConsumerTest3.java ####	
+	展示了采用Lock和Condition来实现多线程中的消费者与生产者模式
 	
 	#### WaitNotifyTest.java ####	
 	展示了wait和notify的使用，如果两个线程对于不同对象采用wait和notify，那么他们之间是不会产生影响的。
