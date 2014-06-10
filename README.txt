@@ -153,8 +153,17 @@
 
 	#### ConditionTest.java ####	
 	展示了如何使用Condition来完成线程之间的通讯。
+	
+	#### SemaphoreTest.java ####	
+	展示了如何使用Semaphore的功能
+	
+	#### CountDownLatchTest.java ####	
+	展示了如何使用CountDownLatch的功能
 
+	#### CyclicBarrierTest.java ####	
+	展示了如何使用CyclicBarrier的功能
 
-
+	#### PhaserTest.java ####	
+	展示了如何使用Phaser的功能
 
 

@@ -68,11 +68,6 @@ public class ConditionTest
 		first.start();
 		second.start();
 		third.start();
-
-		// 主程序等待子线程完成后再结束
-		first.join();
-		second.join();
-		third.join();
 	}
 }
 
