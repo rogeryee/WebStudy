@@ -166,4 +166,16 @@
 	#### PhaserTest.java ####	
 	展示了如何使用Phaser的功能
 
-
+	### ExecutorTest.java ####	
+	展示了如何使用Executor框架创建线程池并执行任务
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
