@@ -169,7 +169,8 @@
 	### ExecutorTest.java ####	
 	展示了如何使用Executor框架创建线程池并执行任务
 	
-	
+	### CallableAndRunnableTest.java ####	
+	展示了Callable与Runnable的区别
 	
 	
 	
