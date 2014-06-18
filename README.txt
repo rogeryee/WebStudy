@@ -175,7 +175,8 @@
 	## ForkJoinTest.java ####	
 	展示了如何使用Fork/Join框架以及RecursiveTask来进行并发计算的例子
 	
-	
+	## ConcurrentLinkedDequeTest.java ####	
+	展示了如何使用ConcurrentLinkedDeque例子，该集合为non-blocking
 	
 	
 	
